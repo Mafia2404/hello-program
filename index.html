@@ -4,6 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Web Page</title>
+  <style>
+    /* Base reset */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+
+    /* Page layout */
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e9eff5);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    /* Card */
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+      padding: 24px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(0,0,0,.1);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+      letter-spacing: .2px;
+    }
+    p.sub {
+      margin: 0 0 20px;
+      color: #5b6470;
+      font-size: .95rem;
+    }
+
+    /* Form controls */
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: 600;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #d6dde6;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #6aa0ff;
+      box-shadow: 0 0 0 4px rgba(106,160,255,.15);
+    }
+
+    /* Submit button */
+    .actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .06s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(37,99,235,.25);
+    }
+    .btn-primary:hover { box-shadow: 0 8px 20px rgba(37,99,235,.32); }
+    .btn:active { transform: translateY(1px); }
+
+    /* Helper text */
+    .hint {
+      margin-top: 8px;
+      font-size: .9rem;
+      color: #6b7280;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body { background: linear-gradient(135deg, #0f172a, #111827); }
+      .card { background: #0b1220; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+      h2 { color: #e5e7eb; }
+      p.sub, .hint, label { color: #9ca3af; }
+      input[type="text"] {
+        background: #0f172a;
+        color: #e5e7eb;
+        border-color: #243045;
+      }
+      input[type="text"]:focus {
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 4px rgba(96,165,250,.18);
+      }
+      .btn-primary { background: #3b82f6; }
+    }
+  </style>
 </head>
 <body>
   <h2>My Simple Web Page</h2>
